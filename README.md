@@ -1,4 +1,4 @@
-# Inquiry_management
+# Query Management
 
 ## 実装した機能
 - 投稿機能
