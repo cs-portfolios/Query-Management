@@ -12,18 +12,18 @@ try{
     $db = new PDO($pdo, $db_user, $db_password);
 
     // データを削除する
-    if(isset($_POST['delete_id'])){
+    if(isset($_POST['delete_id'])){ 
         $delete_id = $_POST['delete_id'];
         $stmt = $db -> prepare($delete_sql);
         $stmt -> bindValue(':delete_id', $delete_id, PDO::PARAM_INT);
         $stmt -> execute();
 
-        header('location: index.php');
+        header('location: admin.php');
         exit();
     }
 
     // データを書き込む
-    if(isset($_POST['register'])){ // form.phpの送信ボタンを押したとき
+    if(isset($_POST['register'])){ 
         $name = trim($_POST['name']);
         $email = trim($_POST['email']);
         $content = trim($_POST['content']);
@@ -58,7 +58,7 @@ try{
         $stmt -> bindValue(":status", $status, PDO::PARAM_STR);
         $stmt -> execute();
 
-        header('location: index.php');
+        header('location: admin.php');
         exit();
     }
 
