@@ -1,19 +1,10 @@
 <?php
 session_start();
 
-$login_e_msg = '';
-$nav_item = [];
-if(isset($_SESSION['user'])){
-    $nav_item['text'] = 'ログアウト';
-    $nav_item['src'] = 'logout.php';
-} else{
-    $nav_item['text'] = 'ログイン';
-    $nav_item['src'] = 'login.php';
-}
-
 function h($str) {
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -37,13 +28,10 @@ function h($str) {
                         <h1>問い合わせ管理</h1>
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="btn btn-outline-info" href="form.php">案件追加</a>
+                                <a class="btn btn-outline-info" href="admin.php">一覧へ戻る</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-outline-info" href="<?= $nav_item['src'] ?>"><?= $nav_item['text'] ?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="btn btn-outline-info" href="index.php">一覧へ戻る</a>
+                                <a class="btn btn-outline-info" href="logout.php">ログアウト</a>
                             </li>
                         </ul>
                     </nav>

@@ -2,7 +2,13 @@
 require_once('db.php');
 require_once('header.php');
 
-// ---- データの取得処理 ----
+// userがログインしていなければlogin.phpに遷移する
+if(!isset($_SESSION['user'])){
+    header('location:login.php');
+    exit();
+}
+
+//データの取得処理
 $select_sql = 'SELECT * FROM content WHERE id = :info_id';
 
 try{

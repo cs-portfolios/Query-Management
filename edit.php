@@ -2,9 +2,9 @@
 require_once('header.php');
 require_once('db.php');
 
-// userがログインしていなければindex.phpに遷移する
+// userがログインしていなければlogin.phpに遷移する
 if(!isset($_SESSION['user'])){
-    header('location:index.php');
+    header('location:login.php');
     exit();
 }
 
