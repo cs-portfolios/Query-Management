@@ -11,8 +11,6 @@ if(isset($_POST['login'])){
     if(!empty($_POST['user_id'] && !empty($_POST['password']))){
         $user_id = $_POST['user_id'];
         $password = $_POST['password'];
-
-        var_dump($_POST);
         
         try{
             $db = new PDO($pdo, $db_user, $db_password);
