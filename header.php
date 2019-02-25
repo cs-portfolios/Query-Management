@@ -30,8 +30,8 @@ function h($str) {
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <header>
+        <header>
+            <div class="row">
                 <div class="col-sm-10 offset-1">
                     <nav class="navbar navbar-expand-sm justify-content-around">
                         <h1>問い合わせ管理</h1>
@@ -48,5 +48,7 @@ function h($str) {
                         </ul>
                     </nav>
                 </div>
-            </header>
-            <main>
+            </div>
+        </header>
+        <main>
+            <div class="row">

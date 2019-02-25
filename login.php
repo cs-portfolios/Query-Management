@@ -40,20 +40,22 @@ if(isset($_POST['login'])){
     }
 }
 ?>
-<div class="col-sm-6 offset-sm-3">
-    <section>
-        <h2>ログイン</h2>
-        <form action="" method="post">
-            <div class="form-gruop">
-                <label class="control-label">管理者ID</label>
-                <input class="form-control" type="text" name="user_id">
-            </div>
-            <div class="form-group">
-                <label class="control-label">パスワード</label>
-                <input class="form-control" type="password" name="password">
-            </div>
-            <input class="btn btn-outline-info" type="submit" name="login" value="ログイン">
-        </form>
-    </section>
-</div>
+
+                <div class="col-sm-6 offset-sm-3">
+                    <section>
+                        <h2>ログイン</h2>
+                        <form action="" method="post">
+                            <div class="form-gruop">
+                                <label class="control-label">管理者ID</label>
+                                <input class="form-control" type="text" name="user_id">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">パスワード</label>
+                                <input class="form-control" type="password" name="password">
+                            </div>
+                            <input class="btn btn-outline-info" type="submit" name="login" value="ログイン">
+                        </form>
+                    </section>
+                </div>
+                
 <?php require_once('footer.php'); ?>

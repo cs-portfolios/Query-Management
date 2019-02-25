@@ -38,45 +38,46 @@ switch($row['status']){
 }
 
 ?>
-<div class="col-sm-8 offset-sm-2">
-    <section>
-        <h2>編集</h2>
-        <div class="nav justify-content-end">
-            <form action="logic.php" method="post">
-                <input type="hidden" name="delete_id" value="<?= $row['id'] ?>">
-                <button class="btn btn-outline-danger" type="submit">削除</button>
-            </form>
-        </div>
-        <form class="form" action="logic.php" method="post">
-            <div class="form-group">
-                <label class="form-lable">氏名</label>
-                <input class="form-control" type="text" name="name" 
-                value="<?= h($row['name']) ?>" required>  
-            </div>
-            <div class="form-group">
-                <label class="form-lable">メールアドレス</label>
-                <input class="form-control" type="email" name="email" 
-                value="<?= h($row['email']); ?>" required>
-            </div>
-            <div class="form-group">
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="status" value="未対応" <?= $checked0 ?> >
-                    <label class="control-label">未対応</label>
+
+                <div class="col-sm-8 offset-sm-2">
+                    <section>
+                        <h2>編集</h2>
+                        <div class="nav justify-content-end">
+                            <form action="logic.php" method="post">
+                                <input type="hidden" name="delete_id" value="<?= $row['id'] ?>">
+                                <button class="btn btn-outline-danger" type="submit">削除</button>
+                            </form>
+                        </div>
+                        <form class="form" action="logic.php" method="post">
+                            <div class="form-group">
+                                <label class="form-lable">氏名</label>
+                                <input class="form-control" type="text" name="name" 
+                                value="<?= h($row['name']) ?>" required>  
+                            </div>
+                            <div class="form-group">
+                                <label class="form-lable">メールアドレス</label>
+                                <input class="form-control" type="email" name="email" 
+                                value="<?= h($row['email']); ?>" required>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="status" value="未対応" <?= $checked0 ?> >
+                                    <label class="control-label">未対応</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="status" value="対応完了" <?= $checked1 ?> >
+                                    <label class="control-label">対応完了</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-lable">問い合わせ内容</label>
+                                <textarea class="form-control" type="text" 
+                                name="content" maxlength="1000"
+                                rows="10" required><?= h($row['content']) ?></textarea>
+                            </div>
+                            <input  type="hidden" name="edit_id" value="<?= $row['id'] ?>">
+                            <button class="btn btn-block btn-outline-success" type="submit">登録</button>
+                        </form>
+                    </section>
                 </div>
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="radio" name="status" value="対応完了" <?= $checked1 ?> >
-                    <label class="control-label">対応完了</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="form-lable">問い合わせ内容</label>
-                <textarea class="form-control" type="text" 
-                name="content" maxlength="1000"
-                rows="10" required><?= h($row['content']) ?></textarea>
-            </div>
-            <input  type="hidden" name="edit_id" value="<?= $row['id'] ?>">
-            <button class="btn btn-block btn-outline-success" type="submit">登録</button>
-        </form>
-    </section>
-</div>
 <?php require_once('footer.php'); ?>

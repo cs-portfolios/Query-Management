@@ -19,30 +19,30 @@ try{
 
 }
 ?>
-<div class="col-sm-10 offset-sm-1">
-    <section>
-        <h2>問い合わせ一覧</h2>
-        <table class="table">
-            <tr>    
-                <th>問い合わせ日</th>
-                <th>氏名</th>
-                <th>対応状況</th>
-                <th>&nbsp;</th>
-            </tr>
-            <?php while ($row = $stmt -> fetch(PDO::FETCH_ASSOC) ): ?>
-            <tr>
-                <td><?= $row['uploaded_at'] ?></td>
-                <td><?= h($row['name']) ?></td>
-                <td><?= $row['status'] ?></td>
-                <td>
-                    <form class="form" action="info.php" metod="get">
-                        <input type="hidden" name="info" value="<?= $row['id'] ?>">
-                    <button class="btn btn-outline-info" type="submit">詳細</button>
-                    </form>
-                </td>
-            </tr>
-            <?php endwhile ?>
-        </table>
-    </section>
-</div>
-<? require_once('footer.php'); ?>
+                <div class="col-sm-10 offset-sm-1">
+                    <section>
+                        <h2>問い合わせ一覧</h2>
+                        <table class="table">
+                            <tr>    
+                                <th>問い合わせ日</th>
+                                <th>氏名</th>
+                                <th>対応状況</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            <?php while ($row = $stmt -> fetch(PDO::FETCH_ASSOC) ): ?>
+                            <tr>
+                                <td><?= $row['uploaded_at'] ?></td>
+                                <td><?= h($row['name']) ?></td>
+                                <td><?= $row['status'] ?></td>
+                                <td>
+                                    <form class="form" action="info.php" metod="get">
+                                        <input type="hidden" name="info" value="<?= $row['id'] ?>">
+                                    <button class="btn btn-outline-info" type="submit">詳細</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <?php endwhile ?>
+                        </table>
+                    </section>
+                </div>
+<?php require_once('footer.php'); ?>
